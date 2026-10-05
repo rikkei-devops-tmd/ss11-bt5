@@ -72,14 +72,6 @@ echo location of your Java installation. 1>&2
 
 
 
-@rem Execute Gradle fallback if jar missing
-if not exist "%CLASSPATH%" (
-    where gradle >nul 2>nul
-    if %ERRORLEVEL% equ 0 (
-        gradle %*
-        exit /b %ERRORLEVEL%
-    )
-)
 @rem Execute Gradle
 @rem endlocal doesn't take effect until after the line is parsed and variables are expanded
 @rem which allows us to clear the local environment before executing the java command
